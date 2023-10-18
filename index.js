@@ -1,3 +1,10 @@
+/* 
+  File Name: index.js
+  Student's Name: Amirhossein Mozafarikhosravi
+  StudentID: 301223709
+  Date: October 17th, 2023
+*/
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -48,9 +55,10 @@ async function initializeCategories() {
     }
 }
 
+
 app.post('/products', async (req, res) => {
     try {
-        const product = new Product(req.body);
+        const product = new Product(req.body);  
         await product.save();
         res.status(201).json(product);
     } catch (error) {
